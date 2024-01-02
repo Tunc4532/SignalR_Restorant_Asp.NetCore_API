@@ -1,0 +1,55 @@
+﻿@model List<GetMessageDto>
+@{
+    ViewData["Title"] = "FalseMessage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Çop Kutusu</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Silinen Mesajlar</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Mesajlar ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gönderen</th>
+                                    <th scope="col">Konu</th>
+                                    <th scope="col">Mail</th>
+                                    <th scope="col">Geri Yükle</th>
+                                    <th scope="col">Tamamen Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.NameSurname</td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.Mail</td>
+                                        <td><a href="/AdminMessage/MessagesButtonChangeTrue/@item.MessageID" class="btn btn-outline-primary">Geri Yükle</a></td>
+                                        <td><a href="/AdminMessage/DeleteMessageA/@item.MessageID" class="btn btn-outline-danger">Tamamen Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

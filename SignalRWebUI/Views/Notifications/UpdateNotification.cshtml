@@ -1,0 +1,52 @@
+﻿@model UpdateNotificationDto
+
+@{
+    ViewData["Title"] = "UpdateNotification";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Bildirim İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"> Bildirim Güncelleme Paneli</div>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" asp-for="NotificationID" />
+                            <div class="form-group">
+                                <label for="catagoryname">Bildirim Türü</label>
+                                <input type="text" asp-for="Type" class="form-control" placeholder="clas değeri giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Bildirim İkonu</label>
+                                <input type="text" asp-for="Icon" class="form-control" placeholder="İkon Url giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Açıklama</label>
+                                <input type="text" asp-for="Description" class="form-control" placeholder="Bildirim Açıklaması">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Tarih</label>
+                                <input type="date" asp-for="NotificationDate" class="form-control" placeholder="Bildirim Tarihi">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Status Değeri</label>
+                                <input type="text" asp-for="Status" class="form-control" placeholder="true yada false değer veriniz">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Bildirim Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

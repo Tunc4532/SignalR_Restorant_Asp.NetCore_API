@@ -1,0 +1,52 @@
+﻿@model UpdateFeatureDto
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Öne Çıkan Alan İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Öne Çıkan Alan Ekleme Sayfası</div>
+                        </div>
+                        <input type="hidden" asp-for="FeatureID" />
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="catagoryname">Başlık1</label>
+                                <input type="text" asp-for="Tittle1" class="form-control" placeholder="Başlığı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Başlık2</label>
+                                <input type="text" asp-for="Tittle2" class="form-control" placeholder="Başlığı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Başlık3</label>
+                                <input type="text" asp-for="Tittle3" class="form-control" placeholder="Başlığı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Açıklama1</label>
+                                <input type="text" asp-for="Description1" class="form-control" placeholder="Açıklamayı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Açıklama2</label>
+                                <input type="text" asp-for="Description2" class="form-control" placeholder="Açıklamayı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Açıklama3</label>
+                                <input type="text" asp-for="Description3" class="form-control" placeholder="Açıklamayı Giriniz">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Öne Çıkan Alnı Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

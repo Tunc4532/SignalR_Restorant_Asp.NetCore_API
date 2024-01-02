@@ -1,0 +1,49 @@
+﻿@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Referans Yorum İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title"> Referans Yorum Güncelleme Paneli</div>
+                        </div>
+                        <input type="hidden" asp-for="TestimonialID" />
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="catagoryname">Ad Soyad</label>
+                                <input type="text" asp-for="Name" class="form-control" placeholder="Müşteri Ad Soyad Bilgisini Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Mesleği</label>
+                                <input type="text" asp-for="Tittle" class="form-control" placeholder="Müşteri Ünvanını Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Görsel</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control" placeholder="Müşteri Resim Dosya Yolunu Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Yorum</label>
+                                <input type="text" asp-for="Comment" class="form-control" placeholder="Müşteri Yorumu Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="catagoryname">Durumu</label>
+                                <input type="text" asp-for="Status" class="form-control" placeholder="Yorum Durumu Giriniz">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success"> Yorumu Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+@*UI Layout Index*@
+<!DOCTYPE html>
+<html>
+@await Component.InvokeAsync("_UILayoutHeadComponentPartial")
+<body class="sub_page">
+
+    <div >
+        @await Component.InvokeAsync("_UILayoutNavbarComponentPartial")
+        @RenderBody()
+    </div>
+
+    @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
+
+    @await Component.InvokeAsync("_UILayoutScriptsComponentPartial")
+
+</body>
+</html>
+

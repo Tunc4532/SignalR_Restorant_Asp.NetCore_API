@@ -1,0 +1,60 @@
+﻿@model List<ResultCatagoryDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+    string durum;
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Katagori İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Katagori Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Katagori ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Katagori Adı</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    if(item.Status==true)
+                                    {
+                                        durum = "Aktif";
+                                    }
+                                    else
+                                    {
+                                        durum = "Pasif";
+                                    }
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.CatagoryName</td>
+                                        <td>@durum</td>
+                                        <td><a href="/Catagory/DeleteCatagory/@item.CatagoryID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Catagory/UpdateCatagory/@item.CatagoryID" class="btn btn-outline-warning">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Catagory/CreateCatagory/" class="btn btn-outline-success">Yeni Katagori Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
